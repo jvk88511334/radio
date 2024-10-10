@@ -14,13 +14,13 @@ RUN npm ci
 COPY . .
 
 # Construisez l'application React
-RUN npm run build
+RUN vite build
 
 # Utilisez une image Nginx pour servir l'application
 FROM nginx:1.21.0-alpine
 
 # Copiez les fichiers construits de l'étape précédente
-COPY --from=build /app/build /usr/share/nginx/html
+COPY --from=build /app/dist /usr/share/nginx/html
 
 # Copiez un fichier de configuration Nginx personnalisé
 COPY nginx.conf /etc/nginx/conf.d/default.conf
