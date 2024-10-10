@@ -13,13 +13,14 @@ RUN npm ci
 # Copiez le code source de l'application
 COPY . .
 
-# Construisez l'application React
-RUN vite build
+# Construisez l'application Vite + React
+RUN npm run build
 
 # Utilisez une image Nginx pour servir l'application
 FROM nginx:1.21.0-alpine
 
 # Copiez les fichiers construits de l'étape précédente
+# Note : le chemin est modifié de 'build' à 'dist' car Vite utilise 'dist' par défaut
 COPY --from=build /app/dist /usr/share/nginx/html
 
 # Copiez un fichier de configuration Nginx personnalisé
