@@ -9,6 +9,7 @@ const RadioList = ({ radios, onRadioSelect }) => {
 
     return (
         <div style={{ position: 'absolute', right: '1em', top: '0' }}>
+            <div><p>Radios</p></div>
             {radios.map(radio => (
                 <div key={radio.id}>
                     <button
