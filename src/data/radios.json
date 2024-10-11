@@ -1,0 +1,32 @@
+{
+  "listeA": [
+    { "id": 0, "name": "ABC Lounge Radio", "genre": "Chill / Lounge", "streamUrl": "https://cast1.asurahosting.com/proxy/julien/stream" },
+    { "id": 1, "name": "ChillHop", "genre": "Chill / Lo-fi", "streamUrl": "https://fluxfm.streamabc.net/flx-chillhop-mp3-320-1595440?sABC=66qqr1sq%230%23pp0ss2n23rr88q27q2pp790s8n1o0q6s%23&amp;aw_0_1st.playerid=&amp;amsparams=playerid:;skey:1725817341" },
+    { "id": 2, "name": "Costa Del Mar Chillout", "genre": "Chill / Lounge", "streamUrl": "https://radio4.cdm-radio.com:18020/stream-mp3-Chill?" },
+    { "id": 3, "name": "Costa Del Mar Zen", "genre": "Chill / Lounge", "streamUrl": "https://radio4.cdm-radio.com:18004/stream-mp3-Zen?" },
+    { "id": 4, "name": "DinamoFM Caffe", "genre": "Chill / Lounge", "streamUrl": "https://channels.dinamo.fm/caffe-mp3" },
+    { "id": 5, "name": "Frisky Chill", "genre": "Chill / Lounge", "streamUrl": "https://chill.friskyradio.com/friskychill_mp3_high" },
+    { "id": 6, "name": "Vanilla Radio", "genre": "Chill / Lounge", "streamUrl": "https://smooth.vanillaradio.com:8032/live" },
+    { "id": 7, "name": "DJAM Radio", "genre": "Chill / Lounge", "streamUrl": "https://stream9.xdevel.com/audio1s976748-1515/stream/icecast.audio" },
+
+    { "id": 8, "name": "Radio Classique Montreal", "genre": "Classique", "streamUrl": "https://listen.radioking.com/radio/228241/stream/271804" },
+    { "id": 9, "name": "Radio Swiss Classic", "genre": "Classique", "streamUrl": "https://stream.srg-ssr.ch/m/rsc_fr/mp3_128" },
+
+    { "id": 10, "name": "Kosmos Jazz", "genre": "Jazz", "streamUrl": "https://radiostreaming.ert.gr/ert-webjazz" },
+    { "id": 11, "name": "Radio Swiss Jazz", "genre": "Jazz", "streamUrl": "https://stream.srg-ssr.ch/m/rsj/mp3_128" },
+
+    { "id": 12, "name": "1 HITS 90s", "genre": "Pop", "streamUrl": "https://c4.auracast.net/listen/hits90s/radio.mp3" },
+
+    { "id": 13, "name": "Le triangle", "genre": "Psychedelic", "streamUrl": "https://listen.radioking.com/radio/286465/stream/332506" },
+    { "id": 14, "name": "Psyndora Chill", "genre": "Psychedelic", "streamUrl": "https://cast.magicstreams.gr:9125/;" },
+    { "id": 15, "name": "Psyndora Trance", "genre": "Psychedelic", "streamUrl": "https://cast.magicstreams.gr/sc/psyndora/stream" },
+
+    { "id": 16, "name": "Radio Eurovision", "genre": "Mainstream", "streamUrl": "https://radiostreaming.ert.gr/ert-eurovision" },
+
+    { "id": 17, "name": "Cinemix", "genre": "Soundtracks", "streamUrl": "https://kathy.torontocast.com:1825/stream" },
+
+    { "id": 18, "name": "Radio Hondelatte", "genre": "Histoires", "streamUrl": "https://europe1.lmn.fm/e1-wr1.mp3?aw_0_1st.playerid=lgrdnwsMytuner" }
+  ],
+
+  "listeB": []
+}
