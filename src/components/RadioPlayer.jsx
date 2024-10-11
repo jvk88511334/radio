@@ -2,7 +2,42 @@ import React, { useState, useEffect, useCallback } from 'react';
 import Countdown from 'react-countdown';
 import { useAudio } from '../AudioContext.jsx';
 
+const GenreSelector = ({ genres, selectedGenre, onGenreChange }) => {
+    return (
+        <select
+            value={selectedGenre}
+            onChange={(e) => onGenreChange(e.target.value)}
+            style={{
+                background: '#242424',
+                color: '#e3d5ca',
+                border: '1px solid #333333',
+                padding: '0.5em',
+                borderRadius: '4px',
+                width: '100%',
+                marginBottom: '1em'
+            }}
+        >
+            <option value="">Tous les genres</option>
+            {genres.map(genre => (
+                <option key={genre} value={genre}>
+                    {genre}
+                </option>
+            ))}
+        </select>
+    );
+};
+
 const RadioList = ({ radios, onRadioSelect }) => {
+    const [selectedGenre, setSelectedGenre] = useState("");
+
+    // Extraire tous les genres uniques des radios
+    const genres = [...new Set(radios.map(radio => radio.genre))];
+
+    // Filtrer les radios en fonction du genre sélectionné
+    const filteredRadios = selectedGenre
+        ? radios.filter(radio => radio.genre === selectedGenre)
+        : radios;
+
     if (!Array.isArray(radios) || radios.length === 0) {
         return <p>Aucune radio disponible</p>;
     }
@@ -10,7 +45,12 @@ const RadioList = ({ radios, onRadioSelect }) => {
     return (
         <div style={{ position: 'absolute', right: '1em', top: '0' }}>
             <div><p>Radios</p></div>
-            {radios.map(radio => (
+            <GenreSelector
+                genres={genres}
+                selectedGenre={selectedGenre}
+                onGenreChange={setSelectedGenre}
+            />
+            {filteredRadios.map(radio => (
                 <div key={radio.id}>
                     <button
                         onClick={() => onRadioSelect(radio)}
@@ -34,6 +74,7 @@ const RadioList = ({ radios, onRadioSelect }) => {
         </div>
     );
 };
+
 
 const PlayIcon = () => (
     <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -66,13 +107,6 @@ const Timer60Icon = () => (
         <text x="7" y="17" fontFamily="Arial" fontSize="6" fill="white">60</text>
     </svg>
 );
-
-const formatTime = (time) => {
-    if (time <= 0) return "";
-    const minutes = Math.floor(time / 60);
-    const seconds = Math.floor(time % 60);
-    return `${minutes}:${seconds < 10 ? '0' : ''}${seconds}`;
-};
 
 const DARK_BACKGROUND = '#242424';
 const DARK_BORDER = '#333333';
