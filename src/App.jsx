@@ -1,5 +1,4 @@
 import React, {useState} from 'react'
-import './App.css'
 import {AudioProvider} from "./AudioContext.jsx";
 import radioLists from "./data/radios.json";
 import RadioPlayer from "./components/RadioPlayer.jsx";
