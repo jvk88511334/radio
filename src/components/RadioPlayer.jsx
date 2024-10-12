@@ -14,10 +14,12 @@ const GenreSelector = ({ genres, selectedGenre, onGenreChange }) => {
                 padding: '0.5em',
                 borderRadius: '4px',
                 width: '100%',
-                marginBottom: '1em'
+                marginBottom: '1em',
+                marginTop: '1em',
+                height: '4em'
             }}
         >
-            <option value="">Tous les genres</option>
+            <option value="">Radios: toutes</option>
             {genres.map(genre => (
                 <option key={genre} value={genre}>
                     {genre}
@@ -44,7 +46,6 @@ const RadioList = ({ radios, onRadioSelect }) => {
 
     return (
         <div style={{ position: 'absolute', right: '1em', top: '0' }}>
-            <div><p>Radios</p></div>
             <GenreSelector
                 genres={genres}
                 selectedGenre={selectedGenre}
@@ -60,13 +61,13 @@ const RadioList = ({ radios, onRadioSelect }) => {
                             background: 'none',
                             border: 'none',
                             padding: 0,
+                            marginBottom: '0.5em',
                             fontSize: '1.1em',
                             textAlign: 'left',
                             width: '100%'
                         }}
                     >
                         {radio.name}
-                        <div style={{fontSize: '1em', paddingLeft: '1px', color: 'grey'}}>{radio.genre}</div>
                     </button>
                 </div>
             ))}
@@ -115,6 +116,20 @@ const RadioPlayer = ({ radios = [] }) => {
     const { currentRadio, isPlaying, playRadio, togglePlay } = useAudio();
     const [timerState, setTimerState] = useState(0);
     const [countdownDate, setCountdownDate] = useState(null);
+
+    // Effet pour mettre à jour le titre de l'onglet
+    useEffect(() => {
+        if (currentRadio && isPlaying) {
+            document.title = `▶ ${currentRadio.name}`;
+        } else {
+            document.title = 'Radio Player';
+        }
+
+        // Nettoyage : remettre le titre original quand le composant est démonté
+        return () => {
+            document.title = 'Radio Player';
+        };
+    }, [currentRadio, isPlaying]);
 
     const stopTimer = () => {
         setCountdownDate(null);

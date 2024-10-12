@@ -9,8 +9,8 @@
     { "id": 6, "name": "Vanilla Radio", "genre": "Chill / Lounge", "streamUrl": "https://smooth.vanillaradio.com:8032/live" },
     { "id": 7, "name": "DJAM Radio", "genre": "Chill / Lounge", "streamUrl": "https://stream9.xdevel.com/audio1s976748-1515/stream/icecast.audio" },
 
-    { "id": 8, "name": "Radio Classique Montreal", "genre": "Classique", "streamUrl": "https://listen.radioking.com/radio/228241/stream/271804" },
-    { "id": 9, "name": "Radio Swiss Classic", "genre": "Classique", "streamUrl": "https://stream.srg-ssr.ch/m/rsc_fr/mp3_128" },
+    { "id": 8, "name": "Radio Classique Montreal", "genre": "Classic", "streamUrl": "https://listen.radioking.com/radio/228241/stream/271804" },
+    { "id": 9, "name": "Radio Swiss Classic", "genre": "Classic", "streamUrl": "https://stream.srg-ssr.ch/m/rsc_fr/mp3_128" },
 
     { "id": 10, "name": "Kosmos Jazz", "genre": "Jazz", "streamUrl": "https://radiostreaming.ert.gr/ert-webjazz" },
     { "id": 11, "name": "Radio Swiss Jazz", "genre": "Jazz", "streamUrl": "https://stream.srg-ssr.ch/m/rsj/mp3_128" },
@@ -25,8 +25,15 @@
 
     { "id": 17, "name": "Cinemix", "genre": "Soundtracks", "streamUrl": "https://kathy.torontocast.com:1825/stream" },
 
-    { "id": 18, "name": "Radio Hondelatte", "genre": "Histoires", "streamUrl": "https://europe1.lmn.fm/e1-wr1.mp3?aw_0_1st.playerid=lgrdnwsMytuner" }
-  ],
+    { "id": 18, "name": "Radio Hondelatte", "genre": "Histoires", "streamUrl": "https://europe1.lmn.fm/e1-wr1.mp3?aw_0_1st.playerid=lgrdnwsMytuner" },
 
+    { "id": 19, "name": "La Belle Aventure", "genre": "Variété", "streamUrl": "https://radio11.pro-fhi.net/flux-aryfnfye2/stream" },
+    { "id": 20, "name": "La Cible", "genre": "Variété", "streamUrl": "https://quincy.torontocast.com:3195/stream?x=1728763816005" },
+    { "id": 21, "name": "Best 92.6 Athens", "genre": "Techno", "streamUrl": "https://best.live24.gr/best1222" },
+    { "id": 22, "name": "Ibiza Live Radio", "genre": "Techno", "streamUrl": "https://streams.radio.co/sdc9cfaf77/listen" },
+    { "id": 23, "name": "Ptito Maestro", "genre": "Classic", "streamUrl": "https://radiostreaming.ert.gr/ert-trito-maestro" },
+    { "id": 23, "name": "Radio Classique", "genre": "Classic", "streamUrl": "https://radioclassique.ice.infomaniak.ch/radioclassique-high.mp3" },
+    { "id": 24, "name": "Jazz de ville", "genre": "Jazz", "streamUrl": "https://onair22.xdevel.com/proxy/xautocloud_1kha_423?mp=/stream" }
+  ],
   "listeB": []
 }
