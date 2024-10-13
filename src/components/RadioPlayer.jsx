@@ -57,6 +57,7 @@ const RadioList = ({ radios, onRadioSelect }) => {
                         borderRadius: '4px',
                         width: '100%',
                         height: '2.7em',
+                        fontSize: '16px',
                         marginBottom: '1em'
                     }}
                 />
