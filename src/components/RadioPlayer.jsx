@@ -223,7 +223,7 @@ const RadioPlayer = ({ radios = [] }) => {
                 top: 0,
                 right: 0,
                 bottom: '48px',
-                width: '300px',
+                width: '250px',
                 background: DARK_BACKGROUND,
                 borderLeft: `1px solid ${DARK_BORDER}`,
                 overflowY: 'auto'
