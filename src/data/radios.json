@@ -32,8 +32,8 @@
     { "id": 21, "name": "Best 92.6 Athens", "genre": "Techno", "streamUrl": "https://best.live24.gr/best1222" },
     { "id": 22, "name": "Ibiza Live Radio", "genre": "Techno", "streamUrl": "https://streams.radio.co/sdc9cfaf77/listen" },
     { "id": 23, "name": "Ptito Maestro", "genre": "Classic", "streamUrl": "https://radiostreaming.ert.gr/ert-trito-maestro" },
-    { "id": 23, "name": "Radio Classique", "genre": "Classic", "streamUrl": "https://radioclassique.ice.infomaniak.ch/radioclassique-high.mp3" },
-    { "id": 24, "name": "Jazz de ville", "genre": "Jazz", "streamUrl": "https://onair22.xdevel.com/proxy/xautocloud_1kha_423?mp=/stream" }
+    { "id": 24, "name": "Radio Classique", "genre": "Classic", "streamUrl": "https://radioclassique.ice.infomaniak.ch/radioclassique-high.mp3" },
+    { "id": 25, "name": "Jazz de ville", "genre": "Jazz", "streamUrl": "https://onair22.xdevel.com/proxy/xautocloud_1kha_423?mp=/stream" }
   ],
   "listeB": []
 }

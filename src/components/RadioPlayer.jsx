@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useCallback } from 'react';
+import React, { useState, useEffect } from 'react';
 import Countdown from 'react-countdown';
 import { useAudio } from '../AudioContext.jsx';
 
@@ -14,8 +14,6 @@ const GenreSelector = ({ genres, selectedGenre, onGenreChange }) => {
                 padding: '0.5em',
                 borderRadius: '4px',
                 width: '100%',
-                marginBottom: '1em',
-                marginTop: '1em',
                 height: '4em'
             }}
         >
@@ -31,51 +29,67 @@ const GenreSelector = ({ genres, selectedGenre, onGenreChange }) => {
 
 const RadioList = ({ radios, onRadioSelect }) => {
     const [selectedGenre, setSelectedGenre] = useState("");
+    const [searchTerm, setSearchTerm] = useState("");
 
-    // Extraire tous les genres uniques des radios
     const genres = [...new Set(radios.map(radio => radio.genre))];
 
-    // Filtrer les radios en fonction du genre sélectionné
-    const filteredRadios = selectedGenre
-        ? radios.filter(radio => radio.genre === selectedGenre)
-        : radios;
+    const filteredRadios = radios
+        .filter(radio => !selectedGenre || radio.genre === selectedGenre)
+        .filter(radio => radio.name.toLowerCase().includes(searchTerm.toLowerCase()));
 
     if (!Array.isArray(radios) || radios.length === 0) {
         return <p>Aucune radio disponible</p>;
     }
 
     return (
-        <div style={{ position: 'absolute', right: '1em', top: '0' }}>
-            <GenreSelector
-                genres={genres}
-                selectedGenre={selectedGenre}
-                onGenreChange={setSelectedGenre}
-            />
-            {filteredRadios.map(radio => (
-                <div key={radio.id}>
-                    <button
-                        onClick={() => onRadioSelect(radio)}
-                        style={{
-                            color: '#e3d5ca',
-                            cursor: 'pointer',
-                            background: 'none',
-                            border: 'none',
-                            padding: 0,
-                            marginBottom: '0.5em',
-                            fontSize: '1.1em',
-                            textAlign: 'left',
-                            width: '100%'
-                        }}
-                    >
-                        {radio.name}
-                    </button>
-                </div>
-            ))}
-            <div style={{ marginTop: '5em'}}></div>
+        <div style={{ height: '100%', overflow: 'hidden', display: 'flex', flexDirection: 'column' }}>
+            <div style={{position: 'sticky', top: 0, zIndex: 1, background: '#242424', padding: '1em 0'}}>
+                <input
+                    type="text"
+                    placeholder="Rechercher une radio..."
+                    value={searchTerm}
+                    onChange={(e) => setSearchTerm(e.target.value)}
+                    style={{
+                        background: '#242424',
+                        color: '#e3d5ca',
+                        border: '1px solid #333333',
+                        padding: '0.5em',
+                        borderRadius: '4px',
+                        width: '100%',
+                        height: '2.7em',
+                        marginBottom: '1em'
+                    }}
+                />
+                <GenreSelector
+                    genres={genres}
+                    selectedGenre={selectedGenre}
+                    onGenreChange={setSelectedGenre}
+                />
+            </div>
+            <div style={{overflowY: 'auto', flex: 1, paddingBottom: '3em'}}>
+                {filteredRadios.map(radio => (
+                    <div key={radio.id}>
+                        <button
+                            onClick={() => onRadioSelect(radio)}
+                            style={{
+                                color: '#e3d5ca',
+                                cursor: 'pointer',
+                                background: 'none',
+                                border: 'none',
+                                padding: '0.5em 0',
+                                fontSize: '1.1em',
+                                textAlign: 'left',
+                                width: '100%'
+                            }}
+                        >
+                            {radio.name}
+                        </button>
+                    </div>
+                ))}
+            </div>
         </div>
     );
 };
-
 
 const PlayIcon = () => (
     <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -117,7 +131,6 @@ const RadioPlayer = ({ radios = [] }) => {
     const [timerState, setTimerState] = useState(0);
     const [countdownDate, setCountdownDate] = useState(null);
 
-    // Effet pour mettre à jour le titre de l'onglet
     useEffect(() => {
         if (currentRadio && isPlaying) {
             document.title = `▶ ${currentRadio.name}`;
@@ -125,7 +138,6 @@ const RadioPlayer = ({ radios = [] }) => {
             document.title = 'Radio Player';
         }
 
-        // Nettoyage : remettre le titre original quand le composant est démonté
         return () => {
             document.title = 'Radio Player';
         };
@@ -149,7 +161,7 @@ const RadioPlayer = ({ radios = [] }) => {
                 duration = 30 * 60 * 1000; // 30 minutes en millisecondes
                 break;
             case 2:
-                duration = 60 * 60 * 1000; // 60 minutes en millisecondes
+                duration = 60 * 60 * 1000;
                 break;
             case 0:
                 setCountdownDate(null);
@@ -206,7 +218,18 @@ const RadioPlayer = ({ radios = [] }) => {
 
     return (
         <>
-            <RadioList radios={radios} onRadioSelect={playRadio} />
+            <div style={{
+                position: 'fixed',
+                top: 0,
+                right: 0,
+                bottom: '48px',
+                width: '300px',
+                background: DARK_BACKGROUND,
+                borderLeft: `1px solid ${DARK_BORDER}`,
+                overflowY: 'auto'
+            }}>
+                <RadioList radios={radios} onRadioSelect={playRadio} />
+            </div>
             <div style={playerStyle}>
                 <div style={{
                     display: 'flex',
