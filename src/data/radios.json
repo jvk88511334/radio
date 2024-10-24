@@ -27,7 +27,6 @@
     { "id": 26, "name": "Yimago", "genre": "World", "streamUrl": "https://strw3.openstream.co/873?aw_0_1st.collectionid%3D3667%26stationId%3D3667%26publisherId%3D897%26k%3D1729173890" }
   ],
   "listeB": [
-    [
       {"id": 1001,"name": "Chicks","genre": "Artist","streamUrl": "https://nl4.mystreaming.net/er/chicks/icecast.audio"},
       {"id": 1002,"name": "2Pac","genre": "Artist","streamUrl": "https://nl4.mystreaming.net/er/2pac/icecast.audio"},
       {"id": 1003,"name": "10cc","genre": "Artist","streamUrl": "https://nl4.mystreaming.net/er/10cc/icecast.audio"},
@@ -475,5 +474,4 @@
       {"id": 1445,"name": "Ziggy Marley","genre": "Artist","streamUrl": "https://nl4.mystreaming.net/er/ziggymarley/icecast.audio"},
       {"id": 1446,"name": "ZZ Top","genre": "Artist","streamUrl": "https://nl4.mystreaming.net/er/zztop/icecast.audio"}
     ]
-  ]
 }
